@@ -17,7 +17,7 @@ import { HighlightsMarquee } from "@/components/animations/highlights-marquee";
 import { StaggerReveal, StaggerItem } from "@/components/animations/stagger-reveal";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { WaveGroup, WaveItem } from "@/components/animations/wave-group";
-import { MapEmbed } from "@/components/ui/MapEmbed";
+import MapEmbed from "@/components/ui/MapEmbed";
 import { div } from "motion/react-client";
 
 function blockId(props: Record<string, unknown>, fallback: string) {
@@ -424,7 +424,9 @@ export const BarberContactBlock: ComponentType<Record<string, unknown>> = (props
       </div>
     </div>
     <div className="bb-shell">
-      <MapEmbed className="mt-8" />
+      <div className="w-full h-[350px] md:h-[480px] relative">
+        <MapEmbed className="mt-8" />
+      </div>
     </div>
   </section>
 );

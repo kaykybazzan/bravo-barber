@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { clientConfig } from "@/config/client.config";
 import { cn } from "@/utils/cn";
 
-export function Map({ className, ratio = "aspect-[16/10]" }: { className?: string; ratio?: string }) {
+export function Map({ className, ratio = "aspect-[16/10] md:aspect-[16/9]" }: { className?: string; ratio?: string }) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -74,7 +74,7 @@ export function Map({ className, ratio = "aspect-[16/10]" }: { className?: strin
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] shadow-2xl",
+        "overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] shadow-2xl min-h-[320px] md:min-h-[420px]",
         ratio,
         className,
       )}
