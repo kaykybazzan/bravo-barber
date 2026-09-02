@@ -4,6 +4,7 @@ import { PageComposer } from "@/platform/composition/PageComposer";
 import { JsonLd } from "@/seo/JsonLd";
 import { homeGraph } from "@/seo/schema";
 import { buildMetadata } from "@/seo/metadata";
+import PreloaderWrapper from "@/components/PreloaderWrapper";
 
 export const metadata: Metadata = buildMetadata({
   title: clientConfig.seo.defaultTitle,
@@ -15,6 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
+      <PreloaderWrapper />
       <PageComposer />
       <JsonLd data={homeGraph()} id="nx-home-graph" />
     </>

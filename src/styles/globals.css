@@ -148,12 +148,12 @@
 
   /* Hairline grid used as an ambient texture on dark sections. */
   .nx-grid-texture {
-    background-image:
+    /* background-image:
       linear-gradient(to right, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px),
       linear-gradient(to bottom, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px);
     background-size: 72px 72px;
     background-position: center;
-    mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 72%);
+    mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 72%); */
   }
 }
 
@@ -420,4 +420,59 @@
 }
 .faq-item[data-open="true"] .faq-icon {
   transform: rotate(45deg);
+}
+
+/* --- Custom Map Marker Styles --- */
+.custom-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pulse {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(184, 135, 77, 0.3);
+  animation: pulse 2s ease-out infinite;
+}
+
+.marker-inner {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #B8874D;
+  box-shadow: 0 0 20px rgba(184, 135, 77, 0.6), 0 0 40px rgba(184, 135, 77, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }

@@ -28,11 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang={seo.locale.replace("_", "-")}>
         <head>
           <style dangerouslySetInnerHTML={{ __html: buildThemeCss(design) }} />
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         </head>
         <body data-nx-archetype="luxury" data-nx-imagery="editorial" data-nx-background="editorial">
           <a href="#conteudo" className="nx-skip-link">Pular para o conteúdo</a>
           <BarberHeader />
-          <main id="conteudo">{children}</main>
+          <main id="conteudo" className="pb-28 sm:pb-12">{children}</main>
           <BarberFooter />
           <BarberMobileBar />
           <Analytics requireConsent={false} />

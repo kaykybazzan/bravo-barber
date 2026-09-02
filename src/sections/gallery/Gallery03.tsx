@@ -23,10 +23,6 @@ export function Gallery03({ id = "galeria", eyebrow, title, lead, items, limit =
                 ratio="3/2"
                 sizes="(max-width: 640px) 86vw, (max-width: 1024px) 54vw, 460px"
               />
-              <figcaption className="px-5 py-4 text-sm">
-                <span className="font-semibold">{item.caption}</span>
-                <span className="text-fg-soft"> · {item.category}</span>
-              </figcaption>
             </figure>
           ))}
         </Carousel>

@@ -17,6 +17,7 @@ export const clientConfig: ClientConfig = {
     description:
       "Barbearia masculina de linguagem contemporânea, com cortes, barba e grooming em uma experiência focada em precisão, identidade e cuidado.",
     priceRange: "$$",
+    cnpj: "",
   },
 
   contact: {
@@ -26,14 +27,15 @@ export const clientConfig: ClientConfig = {
   },
 
   address: {
-    street: "",
-    number: "",
-    complement: "",
+    street: "Rua XV de Novembro",
+    number: "123",
+    complement: "Sala 1",
     district: "Centro",
     city: "Timbó",
     state: "SC",
-    zipCode: "",
+    zipCode: "89120-000",
     country: "BR",
+    geo: { latitude: -26.8233, longitude: -49.2718 },
     serviceAreas: ["Timbó", "Indaial", "Pomerode", "Rio dos Cedros"],
     mapsEmbedQuery: "Centro, Timbó - SC",
   },
@@ -131,7 +133,7 @@ export const clientConfig: ClientConfig = {
   features: {
     whatsappFloating: false,
     contactForm: false,
-    maps: false,
+    maps: true,
     testimonials: false,
     gallery: true,
     projects: false,

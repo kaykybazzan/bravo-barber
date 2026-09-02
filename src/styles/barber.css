@@ -12,7 +12,7 @@
   --bb-paper-2: #e7ded2;
   --bb-bronze: #b8874d;
   --bb-bronze-light: #d2ad7c;
-  --bb-muted: #81776d;
+  --bb-muted: #4b5563;
   --bb-hairline: color-mix(in srgb, var(--bb-ink) 18%, transparent);
   --bb-hairline-dark: color-mix(in srgb, white 18%, transparent);
   --bb-shell: min(92vw, 1500px);
@@ -134,7 +134,7 @@ body {
   text-transform: uppercase;
 }
 .bb-hero h1 em { display: block; font-style: italic; color: var(--bb-bronze-light); transform: translateX(7vw); }
-.bb-hero-lead { max-width: 510px; margin: 32px 0 0; font-size: clamp(1rem, 1.2vw, 1.16rem); line-height: 1.72; color: rgba(241,236,228,.76); }
+.bb-hero-lead { max-width: 510px; margin: 32px 0 0; font-size: clamp(1rem, 1.2vw, 1.16rem); line-height: 1.72; color: rgba(241,236,228,.85); }
 .bb-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .bb-primary-link, .bb-secondary-link {
   min-height: 54px;
@@ -151,7 +151,7 @@ body {
 .bb-primary-link:hover { background: var(--bb-paper); }
 .bb-secondary-link { border: 1px solid rgba(255,255,255,.32); color: var(--bb-paper); }
 .bb-secondary-link:hover { border-color: var(--bb-paper); }
-.bb-hero-side-note { align-self: end; justify-self: end; width: min(270px, 100%); padding: 18px 0; border-top: 1px solid rgba(255,255,255,.26); color: rgba(241,236,228,.72); font-size: .78rem; line-height: 1.55; }
+.bb-hero-side-note { align-self: end; justify-self: end; width: min(270px, 100%); padding: 18px 0; border-top: 1px solid rgba(255,255,255,.26); color: rgba(241,236,228,.85); font-size: .78rem; line-height: 1.55; }
 .bb-hero-bottom {
   grid-column: 1 / -1;
   display: grid;
@@ -163,7 +163,7 @@ body {
   font-size: .7rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(241,236,228,.65);
+  color: rgba(241,236,228,.8);
 }
 .bb-scroll-cue { display: inline-flex; align-items: center; gap: 10px; }
 .bb-scroll-cue::before { content: ""; width: 28px; height: 1px; background: currentColor; }
@@ -181,8 +181,8 @@ body {
 .bb-section-paper2 { background: var(--bb-paper-2); }
 .bb-section-head { display: grid; grid-template-columns: minmax(0,.8fr) minmax(280px,1.2fr); gap: 8vw; align-items: end; margin-bottom: clamp(42px, 6vw, 82px); }
 .bb-section-head h2 { margin: 0; font: 400 clamp(3rem, 6.8vw, 7.8rem)/.85 var(--bb-serif); letter-spacing: -.065em; }
-.bb-section-head p { max-width: 540px; margin: 0; color: var(--bb-muted); line-height: 1.7; }
-.bb-section-dark .bb-section-head p { color: rgba(241,236,228,.62); }
+.bb-section-head p { max-width: 540px; margin: 0; color: #4b5563; line-height: 1.7; }
+.bb-section-dark .bb-section-head p { color: rgba(241,236,228,.8); }
 
 /* Manifesto ------------------------------------------------- */
 .bb-manifesto-grid { display: grid; grid-template-columns: minmax(0,1.03fr) minmax(320px,.97fr); gap: clamp(30px, 7vw, 110px); align-items: start; padding-top: 64px; }
@@ -200,10 +200,10 @@ body {
 .bb-manifesto-list strong { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
 
 /* Services -------------------------------------------------- */
-.bb-services-top { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 34px; }
+.bb-services-top { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 34px; padding: 0 16px; }
 .bb-services-top h2 { max-width: 820px; font: 400 clamp(3rem, 7vw, 8rem)/.84 var(--bb-serif); letter-spacing: -.07em; }
-.bb-services-top p { max-width: 440px; margin: 0 0 10px; color: var(--bb-muted); }
-.bb-service-list { border-top: 1px solid var(--bb-hairline); }
+.bb-services-top p { max-width: 440px; margin: 0 0 10px; color: #4b5563; }
+.bb-service-list { border-top: 1px solid var(--bb-hairline); padding: 0 16px; }
 .bb-service-row {
   display: grid;
   grid-template-columns: 60px minmax(220px,.7fr) minmax(280px,1fr) 130px 34px;
@@ -214,9 +214,9 @@ body {
   transition: background 220ms ease, color 220ms ease, padding 220ms ease;
 }
 .bb-service-row:hover { background: var(--bb-ink); color: var(--bb-paper); padding-inline: 18px; }
-.bb-service-row:hover .bb-service-desc { color: rgba(241,236,228,.62); }
+.bb-service-row:hover .bb-service-desc { color: rgba(241,236,228,.8); }
 .bb-service-name { font: 400 clamp(1.55rem, 2.4vw, 2.7rem)/1 var(--bb-serif); letter-spacing: -.035em; }
-.bb-service-desc { max-width: 570px; color: var(--bb-muted); font-size: .88rem; line-height: 1.62; }
+.bb-service-desc { max-width: 570px; color: #4b5563; font-size: .88rem; line-height: 1.62; }
 .bb-service-meta { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--bb-bronze); }
 .bb-service-arrow { font-size: 1.25rem; transition: transform 180ms ease; }
 .bb-service-row:hover .bb-service-arrow { transform: translate(4px,-4px); }
@@ -234,7 +234,7 @@ body {
 .bb-editorial-card-c { aspect-ratio: 3/4; margin-top: 0; }
 .bb-editorial-copy { grid-column: 1 / 3; margin-top: clamp(24px,4vw,56px); display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: end; }
 .bb-editorial-copy h2 { font: 400 clamp(3rem, 6vw, 7rem)/.84 var(--bb-serif); letter-spacing: -.065em; }
-.bb-editorial-copy p { max-width: 520px; margin: 0; color: rgba(241,236,228,.64); line-height: 1.76; }
+.bb-editorial-copy p { max-width: 520px; margin: 0; color: rgba(241,236,228,.8); line-height: 1.76; }
 
 /* Gallery preview ------------------------------------------ */
 .bb-gallery-preview { display: grid; grid-template-columns: 1.1fr .7fr .85fr; grid-auto-rows: clamp(180px, 21vw, 340px); gap: 10px; }
@@ -249,60 +249,60 @@ body {
 .bb-gallery-tile:hover::after, .bb-gallery-tile:hover span { opacity: 1; }
 .bb-gallery-tile:hover span { transform: none; }
 .bb-gallery-linkline { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding-top: 24px; border-top: 1px solid var(--bb-hairline); margin-top: 24px; }
-.bb-gallery-linkline p { margin: 0; color: var(--bb-muted); }
+.bb-gallery-linkline p { margin: 0; color: #4b5563; }
 .bb-gallery-linkline a { font-size: .76rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
 
 /* Ritual ---------------------------------------------------- */
 .bb-ritual-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--bb-hairline-dark); border-left: 1px solid var(--bb-hairline-dark); }
 .bb-ritual-step { min-height: 340px; padding: clamp(24px, 3vw, 46px); display: flex; flex-direction: column; border-right: 1px solid var(--bb-hairline-dark); border-bottom: 1px solid var(--bb-hairline-dark); }
 .bb-ritual-step strong { margin-top: auto; font: 400 clamp(1.6rem, 2.4vw, 2.6rem)/1 var(--bb-serif); }
-.bb-ritual-step p { color: rgba(241,236,228,.6); margin: 16px 0 0; font-size: .88rem; line-height: 1.65; }
+.bb-ritual-step p { color: rgba(241,236,228,.8); margin: 16px 0 0; font-size: .88rem; line-height: 1.65; }
 .bb-ritual-step .bb-number { color: var(--bb-bronze-light); }
 
 /* Booking --------------------------------------------------- */
 .bb-booking-section { position: relative; overflow: hidden; background: var(--bb-bronze); color: var(--bb-ink); }
 .bb-booking-section::before { content: "BRAVO"; position: absolute; left: -2vw; bottom: -6vw; font: 900 clamp(11rem,26vw,29rem)/.72 var(--bb-sans); letter-spacing: -.08em; color: rgba(12,11,10,.045); pointer-events: none; }
-.bb-booking-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr minmax(360px,.65fr); gap: clamp(40px, 8vw, 120px); align-items: start; }
+.bb-booking-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr minmax(360px,.65fr); gap: clamp(40px, 8vw, 120px); align-items: start; padding: 0 16px; }
 .bb-booking-copy h2 { margin-top: 20px; font: 400 clamp(3.2rem, 7.2vw, 8rem)/.82 var(--bb-serif); letter-spacing: -.07em; }
 .bb-booking-copy p { max-width: 550px; margin: 30px 0 0; font-size: 1rem; line-height: 1.72; }
 .bb-booking-card { background: var(--bb-ink); color: var(--bb-paper); padding: clamp(26px,4vw,48px); }
 .bb-booking-card-compact { padding: 28px; }
-.bb-booking-field label, .bb-booking-periods legend { display: block; margin-bottom: 10px; font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: rgba(241,236,228,.62); }
+.bb-booking-field label, .bb-booking-periods legend { display: block; margin-bottom: 10px; font-size: .67rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: rgba(241,236,228,.8); }
 .bb-select-wrap { position: relative; border-bottom: 1px solid rgba(255,255,255,.28); }
 .bb-select-wrap select { appearance: none; width: 100%; min-height: 58px; border: 0; background: transparent; color: var(--bb-paper); padding: 0 40px 0 0; font: 400 1.4rem/1.2 var(--bb-serif); outline: 0; }
 .bb-select-wrap select option { background: var(--bb-ink); color: var(--bb-paper); }
 .bb-select-wrap span { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); pointer-events: none; }
 .bb-booking-periods { border: 0; padding: 0; margin: 30px 0 0; }
 .bb-booking-periods > div { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
-.bb-booking-periods button { min-height: 46px; border: 1px solid rgba(255,255,255,.22); background: transparent; color: rgba(241,236,228,.75); font: 700 .7rem/1 var(--bb-sans); cursor: pointer; }
+.bb-booking-periods button { min-height: 46px; border: 1px solid rgba(255,255,255,.22); background: transparent; color: rgba(241,236,228,.85); font: 700 .7rem/1 var(--bb-sans); cursor: pointer; }
 .bb-booking-periods button[aria-pressed="true"] { background: var(--bb-paper); color: var(--bb-ink); border-color: var(--bb-paper); }
 .bb-booking-submit { min-height: 58px; margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 18px; background: var(--bb-bronze); color: var(--bb-ink); font: 900 .72rem/1 var(--bb-sans); letter-spacing: .08em; text-transform: uppercase; }
 .bb-booking-submit:hover { background: var(--bb-paper); }
-.bb-booking-note { margin: 14px 0 0; color: rgba(241,236,228,.5); font-size: .72rem; line-height: 1.5; }
+.bb-booking-note { margin: 14px 0 0; color: rgba(241,236,228,.75); font-size: .72rem; line-height: 1.5; }
 
 /* FAQ ------------------------------------------------------- */
 .bb-faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(40px,9vw,140px); }
 .bb-faq-intro h2 { margin-top: 22px; font: 400 clamp(2.8rem,5vw,5.6rem)/.9 var(--bb-serif); letter-spacing: -.06em; }
-.bb-faq-intro p { color: var(--bb-muted); line-height: 1.72; }
+.bb-faq-intro p { color: #4b5563; line-height: 1.72; }
 .bb-faq-list { border-top: 1px solid var(--bb-hairline); }
 .faq-item { border-bottom: 1px solid var(--bb-hairline); }
 .bb-faq-summary { list-style: none; min-height: 86px; display: grid; grid-template-columns: 42px 1fr 28px; gap: 16px; align-items: center; cursor: pointer; font-size: 1rem; font-weight: 700; background: none; border: none; padding: 0; width: 100%; text-align: left; }
 .bb-faq-summary > span { display: flex; align-items: center; }
-.faq-item > p { max-width: 660px; margin: -4px 40px 30px 58px; color: var(--bb-muted); line-height: 1.72; }
+.faq-item > p { max-width: 660px; margin: -4px 40px 30px 58px; color: #4b5563; line-height: 1.72; }
 
 /* Contact --------------------------------------------------- */
 .bb-contact-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--bb-hairline); }
 .bb-contact-main, .bb-contact-hours { padding: clamp(30px,5vw,74px); }
 .bb-contact-main { background: var(--bb-ink); color: var(--bb-paper); }
 .bb-contact-main h2 { margin-top: 22px; font: 400 clamp(3rem,6vw,6.5rem)/.86 var(--bb-serif); letter-spacing: -.065em; }
-.bb-contact-main > p { max-width: 520px; margin-top: 2rem; color: rgba(241,236,228,.6); }
+.bb-contact-main > p { max-width: 520px; margin-top: 2rem; color: rgba(241,236,228,.8); }
 .bb-contact-lines { margin-top: 38px; border-top: 1px solid var(--bb-hairline-dark); }
 .bb-contact-lines a, .bb-contact-lines div { min-height: 58px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-bottom: 1px solid var(--bb-hairline-dark); font-size: .78rem; }
-.bb-contact-lines span { color: rgba(241,236,228,.54); text-transform: uppercase; letter-spacing: .1em; }
+.bb-contact-lines span { color: rgba(241,236,228,.75); text-transform: uppercase; letter-spacing: .1em; }
 .bb-contact-hours h3 { font: 400 clamp(2rem,3vw,3.2rem)/1 var(--bb-serif); }
 .bb-hours-list { margin-top: 28px; }
 .bb-hours-list div { display: flex; justify-content: space-between; gap: 24px; padding-block: 14px; border-bottom: 1px solid var(--bb-hairline); font-size: .82rem; }
-.bb-hours-note { margin-top: 24px; color: var(--bb-muted); font-size: .76rem; }
+.bb-hours-note { margin-top: 24px; color: #4b5563; font-size: .76rem; }
 
 /* Footer ---------------------------------------------------- */
 .bb-footer { background: var(--bb-ink); color: var(--bb-paper); padding: clamp(70px,9vw,130px) 0 28px; }
@@ -311,10 +311,10 @@ body {
 .bb-footer-word { margin-top: 26px; font: 900 clamp(5.8rem,14.6vw,15rem)/.72 var(--bb-sans); letter-spacing: -.09em; }
 .bb-footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-top: 12px; }
 .bb-footer-links > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.bb-footer-links span { margin-bottom: 8px; color: rgba(241,236,228,.43); font-size: .65rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.bb-footer-links span { margin-bottom: 8px; color: rgba(241,236,228,.7); font-size: .65rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .bb-footer-links a { min-height: 32px; font-size: .82rem; }
 .bb-footer-links a:hover { color: var(--bb-bronze-light); }
-.bb-footer-bottom { margin-top: 70px; padding-top: 20px; border-top: 1px solid var(--bb-hairline-dark); display: flex; justify-content: space-between; gap: 30px; color: rgba(241,236,228,.45); font-size: .66rem; }
+.bb-footer-bottom { margin-top: 70px; padding-top: 20px; border-top: 1px solid var(--bb-hairline-dark); display: flex; justify-content: space-between; gap: 30px; color: rgba(241,236,228,.7); font-size: .66rem; }
 .bb-footer-bottom nav { display: flex; flex-wrap: wrap; gap: 18px; }
 
 /* Page hero ------------------------------------------------- */
@@ -326,7 +326,7 @@ body {
 .bb-page-hero-inner { position: relative; z-index: 2; min-height: auto; display: flex; flex-direction: column; justify-content: center; padding-block: clamp(60px, 8vh, 90px); }
 .bb-page-breadcrumb { display: flex; gap: 12px; color: var(--bb-bronze-light); font: 800 .65rem/1 var(--bb-sans); letter-spacing: .12em; text-transform: uppercase; }
 .bb-page-hero h1 { max-width: 920px; margin-top: 28px; font: 400 clamp(4rem,9vw,9.8rem)/.8 var(--bb-serif); letter-spacing: -.075em; }
-.bb-page-hero p { max-width: 600px; margin: 28px 0 0; color: rgba(241,236,228,.68); font-size: 1rem; line-height: 1.72; }
+.bb-page-hero p { max-width: 600px; margin: 28px 0 0; color: rgba(241,236,228,.85); font-size: 1rem; line-height: 1.72; }
 
 /* Services page -------------------------------------------- */
 .bb-services-page-list { display: grid; gap: 1px; background: var(--bb-hairline); border: 1px solid var(--bb-hairline); }
@@ -336,7 +336,7 @@ body {
 .bb-service-card-full:hover img { transform: scale(1.02); }
 .bb-service-card-body { padding: clamp(34px,5vw,72px); display: flex; flex-direction: column; }
 .bb-service-card-body h2 { margin-top: 16px; font: 400 clamp(2.4rem,4vw,4.8rem)/.9 var(--bb-serif); letter-spacing: -.055em; }
-.bb-service-card-body > p { max-width: 620px; color: var(--bb-muted); line-height: 1.74; }
+.bb-service-card-body > p { max-width: 620px; color: #4b5563; line-height: 1.74; }
 .bb-service-deliverables { margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--bb-hairline); }
 .bb-service-deliverables li { padding-block: 11px; border-bottom: 1px solid var(--bb-hairline); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; }
 .bb-service-card-link { margin-top: auto; padding-top: 28px; font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--bb-bronze); }
@@ -356,13 +356,13 @@ body {
 /* About page ------------------------------------------------ */
 .bb-about-intro { display: grid; grid-template-columns: .85fr 1.15fr; gap: 8vw; align-items: start; }
 .bb-about-intro h2 { font: 400 clamp(3.3rem,6.5vw,7.4rem)/.85 var(--bb-serif); letter-spacing: -.065em; }
-.bb-about-copy p { margin: 0 0 24px; color: var(--bb-muted); font-size: 1.04rem; line-height: 1.85; }
+.bb-about-copy p { margin: 0 0 24px; color: #4b5563; font-size: 1.04rem; line-height: 1.85; }
 .bb-about-image-wide { position: relative; margin-top: 70px; min-height: min(62vw,800px); overflow: hidden; }
 .bb-about-image-wide img { object-fit: cover; }
 .bb-values { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--bb-hairline); border-left: 1px solid var(--bb-hairline); }
 .bb-value { min-height: 280px; padding: 28px; border-right: 1px solid var(--bb-hairline); border-bottom: 1px solid var(--bb-hairline); display: flex; flex-direction: column; }
 .bb-value h3 { margin-top: auto; font: 400 2rem/1 var(--bb-serif); }
-.bb-value p { color: var(--bb-muted); font-size: .82rem; }
+.bb-value p { color: #4b5563; font-size: .82rem; }
 
 /* Service detail ------------------------------------------- */
 .bb-detail-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(340px,.9fr); gap: clamp(34px,7vw,110px); align-items: start; }
@@ -370,7 +370,7 @@ body {
 .bb-detail-media img { object-fit: cover; }
 .bb-detail-copy { position: sticky; top: 110px; }
 .bb-detail-copy h1 { margin-top: 20px; font: 400 clamp(3.4rem,6.4vw,7rem)/.85 var(--bb-serif); letter-spacing: -.065em; }
-.bb-detail-copy > p { color: var(--bb-muted); line-height: 1.82; }
+.bb-detail-copy > p { color: #4b5563; line-height: 1.82; }
 .bb-detail-list { margin: 32px 0; border-top: 1px solid var(--bb-hairline); }
 .bb-detail-list div { padding-block: 14px; border-bottom: 1px solid var(--bb-hairline); display: grid; grid-template-columns: 34px 1fr; gap: 14px; font-size: .8rem; }
 
@@ -445,28 +445,30 @@ body {
   .bb-section { padding-block: 76px; }
   .bb-section-head, .bb-manifesto-grid, .bb-faq-grid, .bb-booking-grid, .bb-contact-grid, .bb-about-intro, .bb-detail-grid { grid-template-columns: 1fr; }
   .bb-section-head { gap: 22px; }
-  .bb-section-head h2 { font-size: clamp(3rem, 14vw, 5rem); }
+  .bb-section-head h2 { font-size: clamp(2rem, 10vw, 3.5rem); letter-spacing: -0.03em; }
   .bb-manifesto-media { min-height: 118vw; }
-  .bb-manifesto-copy h2 { font-size: clamp(3.2rem,14vw,5.3rem); }
-  .bb-services-top { align-items: start; flex-direction: column; }
-  .bb-services-top h2 { font-size: clamp(3.1rem,14vw,5.4rem); }
-  .bb-service-row { grid-template-columns: 36px 1fr 24px; gap: 12px; min-height: 108px; }
+  .bb-manifesto-copy h2 { font-size: clamp(2rem,10vw,3.2rem); letter-spacing: -0.03em; }
+  .bb-services-top { align-items: start; flex-direction: column; padding: 0 16px; }
+  .bb-services-top h2 { font-size: clamp(2rem,10vw,3.2rem); letter-spacing: -0.03em; }
+  .bb-service-row { grid-template-columns: 36px 1fr 24px; gap: 12px; min-height: 108px; padding: 0 16px; }
   .bb-service-desc, .bb-service-meta { display: none; }
   .bb-service-name { font-size: 1.72rem; }
   .bb-editorial-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .bb-editorial-card-a { margin-top: 20vw; }
   .bb-editorial-copy { grid-column: 1 / -1; grid-template-columns: 1fr; }
-  .bb-editorial-copy h2 { font-size: clamp(3rem,14vw,5.2rem); }
+  .bb-editorial-copy h2 { font-size: clamp(2rem,10vw,3.2rem); letter-spacing: -0.03em; }
   .bb-gallery-preview { grid-template-columns: 1fr 1fr; grid-auto-rows: 48vw; gap: 6px; }
   .bb-gallery-tile:nth-child(1) { grid-row: span 2; }
   .bb-gallery-linkline { align-items: flex-start; flex-direction: column; }
   .bb-ritual-grid { grid-template-columns: 1fr; }
-  .bb-ritual-step { min-height: 240px; }
-  .bb-booking-copy h2 { font-size: clamp(3.4rem,15vw,5.8rem); }
+  .bb-ritual-step { min-height: 240px; padding: 16px; }
+  .bb-booking-copy h2 { font-size: clamp(2rem,10vw,3.2rem); letter-spacing: -0.03em; }
+  .bb-booking-grid { padding: 0 16px; }
   .bb-booking-periods > div { grid-template-columns: 1fr; }
   .bb-faq-list summary { min-height: 78px; grid-template-columns: 32px 1fr 22px; font-size: .9rem; }
   .bb-faq-list details > p { margin-left: 48px; margin-right: 8px; }
   .bb-contact-main, .bb-contact-hours { padding: 30px 22px; }
+  .bb-contact-main h2 { font-size: clamp(2rem,10vw,3.2rem); letter-spacing: -0.03em; }
   .bb-footer-word { font-size: 24vw; }
   .bb-footer-links { grid-template-columns: 1fr; }
   .bb-footer-bottom { flex-direction: column; margin-top: 48px; }
@@ -485,9 +487,6 @@ body {
   .bb-about-image-wide { min-height: 125vw; }
   .bb-detail-copy { position: static; }
 
-  .bb-mobile-bar { display: grid; position: fixed; z-index: var(--nx-z-floating); left: 10px; right: 10px; bottom: 10px; grid-template-columns: .72fr 1.28fr; background: var(--bb-paper); border: 1px solid var(--bb-hairline); box-shadow: 0 16px 50px rgba(12,11,10,.23); }
-  .bb-mobile-bar a { min-height: 54px; display: flex; align-items: center; justify-content: center; font-size: .68rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-  .bb-mobile-bar-primary { background: var(--bb-ink); color: var(--bb-paper); }
 }
 
 @media (max-width: 430px) {

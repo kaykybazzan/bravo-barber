@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { mapsDirectionsHref, mapsEmbedSrc } from "@/integrations/maps";
+import { mapsDirectionsHref } from "@/integrations/maps";
 import { clientConfig } from "@/config/client.config";
 import {
   cookieConsentServerSnapshot,
@@ -11,9 +11,11 @@ import {
 import { uiContent } from "@/data/ui";
 import { formatFullAddress } from "@/utils/format";
 import { cn } from "@/utils/cn";
+import { Map } from "./Map";
 
-/** Lazy iframe. With cookie consent enabled, third-party map content stays
- * blocked until opt-in; essential-only visitors still get an external link. */
+/** Modern dark-themed map with custom markers. With cookie consent enabled,
+ * third-party map content stays blocked until opt-in; essential-only visitors
+ * still get an external link. */
 export function MapEmbed({ className, ratio = "aspect-[16/10]" }: { className?: string; ratio?: string }) {
   const consent = useSyncExternalStore(
     subscribeCookieConsent,
@@ -30,19 +32,19 @@ export function MapEmbed({ className, ratio = "aspect-[16/10]" }: { className?: 
     return (
       <div
         className={cn(
-          "flex flex-col items-center justify-center rounded-[var(--radius-brand)] border border-line bg-surface p-6 text-center",
+          "flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#1a1a1a] p-6 text-center shadow-2xl",
           ratio,
           className,
         )}
       >
-        <p className="font-heading text-h4 font-semibold">{uiContent.map.blockedTitle}</p>
-        <p className="mt-2 max-w-md text-sm text-fg-soft">{uiContent.map.blockedText}</p>
-        <p className="mt-3 text-sm text-fg-soft">{formatFullAddress(clientConfig.address)}</p>
+        <p className="font-heading text-h4 font-semibold text-white">{uiContent.map.blockedTitle}</p>
+        <p className="mt-2 max-w-md text-sm text-gray-400">{uiContent.map.blockedText}</p>
+        <p className="mt-3 text-sm text-gray-400">{formatFullAddress(clientConfig.address)}</p>
         <a
           href={mapsDirectionsHref()}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex min-h-[var(--nx-tap-min)] items-center rounded-[var(--radius-brand-sm)] border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-bg"
+          className="mt-5 inline-flex min-h-[var(--nx-tap-min)] items-center rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-[#B8874D] hover:bg-white/10 transition-colors"
         >
           {uiContent.map.externalCta}
         </a>
@@ -50,15 +52,5 @@ export function MapEmbed({ className, ratio = "aspect-[16/10]" }: { className?: 
     );
   }
 
-  return (
-    <div className={cn("overflow-hidden rounded-[var(--radius-brand)] border border-line bg-surface", ratio, className)}>
-      <iframe
-        title={`Mapa com a localização da ${clientConfig.company.name}`}
-        src={mapsEmbedSrc()}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        className="size-full border-0"
-      />
-    </div>
-  );
+  return <Map className={className} ratio={ratio} />;
 }

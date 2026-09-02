@@ -72,10 +72,6 @@ export function Gallery02({ id = "galeria", eyebrow, title, lead, items }: Galle
                     sizes="(max-width: 640px) 100vw, 33vw"
                     imageClassName="transition-transform duration-[var(--nx-duration-slow)] ease-brand-out group-hover:scale-105"
                   />
-                  <span className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
-                    <span className="font-semibold">{item.caption}</span>
-                    <span className="text-fg-soft">{item.category}</span>
-                  </span>
                 </button>
               </li>
             ))}

@@ -17,34 +17,86 @@ import { HighlightsMarquee } from "@/components/animations/highlights-marquee";
 import { StaggerReveal, StaggerItem } from "@/components/animations/stagger-reveal";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { WaveGroup, WaveItem } from "@/components/animations/wave-group";
+import { MapEmbed } from "@/components/ui/MapEmbed";
 import { div } from "motion/react-client";
 
 function blockId(props: Record<string, unknown>, fallback: string) {
   return typeof props.id === "string" ? props.id : fallback;
 }
 
+const transitionEase = [0.16, 1, 0.3, 1] as const;
+
 export const BarberHeroBlock: ComponentType<Record<string, unknown>> = (props) => (
   <>
     <section className="bb-hero" id={blockId(props, "hero")} aria-labelledby="hero-title">
-      <div className="bb-hero-media">
+      <motion.div 
+        className="bb-hero-media"
+        initial={{ y: 50, opacity: 0, scale: 1.12 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1.1,
+          ease: transitionEase,
+          delay: 0.1,
+        }}
+      >
         <Image src={barberImages[0]} alt="Barbeiro realizando atendimento em um corte masculino" fill sizes="(max-width: 780px) 100vw, 59vw" preload />
-      </div>
+      </motion.div>
       <div className="bb-hero-grain" aria-hidden="true" />
       <div className="bb-hero-ghost" aria-hidden="true">BRAVO</div>
       <div className="bb-shell bb-hero-inner">
-        <div className="bb-hero-copy">
+        <motion.div 
+          className="bb-hero-copy"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: transitionEase,
+            delay: 0.35,
+          }}
+        >
           <WaveGroup>
             <WaveItem>
               <p className="bb-kicker bb-hero-kicker">BARBER CLUB · TIMBÓ</p>
             </WaveItem>
             <WaveItem>
-              <h1 id="hero-title">Precisão é um ritual</h1>
+              <motion.h1
+                id="hero-title"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.9,
+                  ease: transitionEase,
+                  delay: 0.45,
+                }}
+              >
+                Precisão é um ritual
+              </motion.h1>
             </WaveItem>
             <WaveItem>
-              <p className="bb-hero-lead">{companyContent.subheadline}</p>
+              <motion.p
+                className="bb-hero-lead"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: transitionEase,
+                  delay: 0.6,
+                }}
+              >
+                {companyContent.subheadline}
+              </motion.p>
             </WaveItem>
           </WaveGroup>
-          <div className="bb-hero-actions">
+          <motion.div 
+            className="bb-hero-actions"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: transitionEase,
+              delay: 0.7,
+            }}
+          >
             <ShimmerButton 
               className="bb-primary-link btn-primary" 
               background="#b8874d"
@@ -54,10 +106,30 @@ export const BarberHeroBlock: ComponentType<Record<string, unknown>> = (props) =
               Agendar horário <span aria-hidden="true">↗</span>
             </ShimmerButton>
             <Link className="bb-secondary-link" href="/servicos">Explorar serviços <span aria-hidden="true">→</span></Link>
-          </div>
-        </div>
-        <aside className="bb-hero-side-note">Uma experiência masculina contemporânea construída em torno de técnica, detalhe e identidade.</aside>
-        <div className="bb-hero-bottom">
+          </motion.div>
+        </motion.div>
+        <motion.aside 
+          className="bb-hero-side-note"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: transitionEase,
+            delay: 0.75,
+          }}
+        >
+          Uma experiência masculina contemporânea construída em torno de técnica, detalhe e identidade.
+        </motion.aside>
+        <motion.div 
+          className="bb-hero-bottom"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: transitionEase,
+            delay: 0.8,
+          }}
+        >
           <motion.div
             className="bb-scroll-indicator"
             animate={{ y: [0, 16, 0] }}
@@ -69,7 +141,7 @@ export const BarberHeroBlock: ComponentType<Record<string, unknown>> = (props) =
           </motion.div>
           <span>Corte · Barba · Grooming</span>
           <span>BRV / 26</span>
-        </div>
+        </motion.div>
       </div>
     </section>
     <div className="bb-ticker" aria-hidden="true">
@@ -239,13 +311,12 @@ export const BarberGalleryBlock: ComponentType<Record<string, unknown>> = (props
     <div className="bb-shell">
       <div className="bb-section-head">
         <div><p className="bb-kicker">03 / GALERIA</p><h2><WaveText text="Referências de estilo." /></h2></div>
-        <p>Uma seleção editorial de cortes, detalhes e atmosfera. A galeria completa usa as 30 imagens do conjunto enviado para este projeto.</p>
+        <p>Uma curadoria visual de cortes, barba e a atmosfera exclusiva do nosso espaço.</p>
       </div>
       <div className="bb-gallery-preview">
         {previewGallery.map((imageIndex, index) => (
           <Link href="/galeria" className="bb-gallery-tile gallery-item" key={imageIndex}>
             <Image src={barberImages[imageIndex]} alt={`Referência visual de barbearia ${index + 1}`} fill sizes="(max-width: 780px) 50vw, 34vw" />
-            <span>BRAVO / {String(index + 1).padStart(2, "0")}</span>
           </Link>
         ))}
       </div>
@@ -277,7 +348,7 @@ export const BarberRitualBlock: ComponentType<Record<string, unknown>> = (props)
 export const BarberBookingBlock: ComponentType<Record<string, unknown>> = (props) => (
   <section className="bb-section bb-booking-section" id={blockId(props, "agendar")}>
     <div className="bb-shell bb-booking-grid">
-      <div className="bb-booking-copy"><p className="bb-kicker">05 / AGENDAMENTO</p><h2><WaveText text="Seu próximo corte começa aqui." /></h2><p>Escolha o serviço e o período. O site gera uma mensagem objetiva para reduzir a fricção entre querer marcar e realmente iniciar a conversa.</p></div>
+      <div className="bb-booking-copy"><p className="bb-kicker">05 / AGENDAMENTO</p><h2><WaveText text="Seu próximo corte começa aqui." /></h2><p>Selecione o serviço e o horário ideal para dar o primeiro passo no seu atendimento.</p></div>
       <BookingConfigurator company={clientConfig.company.name} whatsapp={clientConfig.contact.whatsapp} services={services.map((service) => service.title)} />
     </div>
   </section>
@@ -339,7 +410,7 @@ export const BarberContactBlock: ComponentType<Record<string, unknown>> = (props
       <div className="bb-contact-main">
         <p className="bb-kicker bb-on-bronze">07 / CONTATO</p>
         <h2><WaveText text="Vamos alinhar seu próximo visual." /></h2>
-        <p>Atendimento demonstrativo em {clientConfig.address.city} — SC. No projeto real, endereço, horários e canais ficam centralizados na configuração do cliente.</p>
+        <p>Atendimento exclusivo com hora marcada. Venha vivenciar a experiência Bravo.</p>
         <div className="bb-contact-lines">
           <a href={whatsappHref({ kind: "schedule" })} target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>Agendar ↗</strong></a>
           <a href={`tel:${clientConfig.contact.phone.replace(/\D/g, "")}`}><span>Telefone</span><strong>{clientConfig.contact.phone}</strong></a>
@@ -349,8 +420,11 @@ export const BarberContactBlock: ComponentType<Record<string, unknown>> = (props
       <div className="bb-contact-hours">
         <p className="bb-kicker">HORÁRIOS</p><h3>Agenda da semana</h3>
         <div className="bb-hours-list"><div><span>Segunda — Quinta</span><strong>09:00 — 19:00</strong></div><div><span>Sexta</span><strong>09:00 — 20:00</strong></div><div><span>Sábado</span><strong>08:00 — 18:00</strong></div><div><span>Domingo</span><strong>Fechado</strong></div></div>
-        <p className="bb-hours-note">Horários demonstrativos; substitua pelos dados reais antes da publicação.</p>
+        <p className="bb-hours-note">Horários sujeitos a alteração. Confirme pelo WhatsApp.</p>
       </div>
+    </div>
+    <div className="bb-shell">
+      <MapEmbed className="mt-8" />
     </div>
   </section>
 );
