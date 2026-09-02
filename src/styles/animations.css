@@ -1,0 +1,71 @@
+/* ============================================================
+   NEXORA MOTION LIBRARY
+   ------------------------------------------------------------
+   Small on purpose. Nine effects, all opacity/transform only, so
+   they never trigger layout and never hurt INP. Elements start in
+   their final state and are only offset once JS confirms support,
+   which means no flash of hidden content if scripts fail.
+   ============================================================ */
+
+[data-reveal] {
+  --nx-reveal-delay: 0ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal][data-reveal-ready="true"] {
+    opacity: 0;
+    transition:
+      opacity var(--nx-motion-duration) var(--nx-ease-out) var(--nx-reveal-delay),
+      transform var(--nx-motion-duration) var(--nx-ease-out) var(--nx-reveal-delay),
+      filter var(--nx-motion-duration) var(--nx-ease-out) var(--nx-reveal-delay);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal="fade-up"][data-reveal-ready="true"] { transform: translate3d(0, var(--nx-motion-distance), 0); }
+  [data-reveal="fade-down"][data-reveal-ready="true"] { transform: translate3d(0, calc(var(--nx-motion-distance) * -1), 0); }
+  [data-reveal="fade-left"][data-reveal-ready="true"] { transform: translate3d(var(--nx-motion-distance), 0, 0); }
+  [data-reveal="fade-right"][data-reveal-ready="true"] { transform: translate3d(calc(var(--nx-motion-distance) * -1), 0, 0); }
+  [data-reveal="scale-in"][data-reveal-ready="true"] { transform: scale(0.96); }
+  [data-reveal="blur-in"][data-reveal-ready="true"] { filter: blur(8px); }
+
+  [data-reveal][data-reveal-visible="true"] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    will-change: auto;
+  }
+}
+
+/* Header shrink + floating elements share one entrance curve. */
+@keyframes nx-pop-in {
+  from { opacity: 0; transform: translate3d(0, 0.75rem, 0) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes nx-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes nx-sheet-in {
+  from { opacity: 0; transform: translate3d(0, 1.5rem, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes nx-spin {
+  to { transform: rotate(360deg); }
+}
+
+.nx-anim-pop { animation: nx-pop-in var(--nx-duration) var(--nx-ease-out) both; }
+.nx-anim-overlay { animation: nx-overlay-in var(--nx-duration-fast) var(--nx-ease) both; }
+.nx-anim-sheet { animation: nx-sheet-in var(--nx-duration) var(--nx-ease-out) both; }
+.nx-anim-spin { animation: nx-spin 800ms linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-anim-pop,
+  .nx-anim-overlay,
+  .nx-anim-sheet {
+    animation: none;
+  }
+  .nx-anim-spin { animation-duration: 2s; }
+}
